@@ -60,13 +60,13 @@
         <h3 style="font-size:1rem;font-weight:700;margin-bottom:1.25rem;display:flex;align-items:center;gap:.5rem;">🩺 Dashboard Kesehatan Gigi</h3>
         <div class="grid-4">
             @foreach([
-                ['Kunjungan Tahun Ini', $thisYearVisits, var(--primary)],
-                ['Rata-rata Interval (Hari)', $avgInterval ?? '—', var(--secondary)],
-                ['Jenis Perawatan', $distinctTreatments, var(--accent)],
-                ['Status Kesehatan', $healthStatus, var(--success)],
+                ['Kunjungan Tahun Ini', $thisYearVisits, 'var(--primary)'],
+                ['Rata-rata Interval (Hari)', $avgInterval ?? '—', 'var(--secondary)'],
+                ['Jenis Perawatan', $distinctTreatments, 'var(--accent)'],
+                ['Status Kesehatan', $healthStatus, 'var(--success)'],
             ] as [$label, $val, $col])
             <div style="text-align:center;padding:1.125rem;background:var(--bg-muted);border-radius:var(--r);">
-                <div style="font-size:1.625rem;font-weight:800;color:var(--primary-dark);margin-bottom:.25rem;">{{ $val }}</div>
+                <div style="font-size:1.625rem;font-weight:800;color:{{ $col }};margin-bottom:.25rem;">{{ $val }}</div>
                 <div style="font-size:.78rem;color:var(--text-3);">{{ $label }}</div>
             </div>
             @endforeach
